@@ -1,4 +1,4 @@
-# Nate Hofford | Evolutionary Ecology & Data Science
+# Welcome!
 
 ## About Me
 ![me + bog ol' oak](img/nate_tree.JPG)
