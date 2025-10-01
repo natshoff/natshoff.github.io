@@ -10,7 +10,7 @@ I am a Project Manager for the Balch Fire Lab and The North Central Regional Inv
 ![climate in chicago](img/chicago_maxtemp.png)
 
 **Hot days in Chicago are getting hotter:** This simple linear regression for a weather station in Chicago, IL shows that daily maximum temperature is increasing at a rate of 0.04° C per year. Data source: [NCEI](https://www.ncdc.noaa.gov/cdo-web/datasets/GHCND/stations/GHCND:USC00111577/detail).
-
+See the code [here](https://natshoff.github.io/portfolioPosts/climateAssignment_hofford.html)!
 
 ### Interactive Cahaba Map
 <embed type="text/html" src="maps/cahaba.html" width="600" height="600">
