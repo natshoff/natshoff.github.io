@@ -5,9 +5,13 @@
 I am a Project Manager for the Balch Fire Lab and The North Central Regional Invasive Species and Climate Change ([NC RISCC](https://nc-riscc.org/)). Prior to joining the Balch Fire Lab, I worked at the National Ecological Observatory Network (NEON) as a botanist in the [Southeast US](https://www.neonscience.org/impact/observatory-blog/getting-know-neon-domains-ozarks-complex). My previous research focused on assessing genomic variation and habitat suitability for the invasive species, Johnsongrass (*Sorghum halepense*). I received my MS in Biology from the University of Alabama, and my BS in Evolution and Ecology from Ohio State University.
 
 ## Data Exploration
+Below are assignments from the CU Boulder Earth Analytics Data Science Course
 
 ### American Golden Plover Migration Mapping
 <iframe src="https://macaulaylibrary.org/asset/31723881/embed" height="504" width="640" frameborder="0" allowfullscreen></iframe>
+
+<embed type="text/html" src="maps/pluvialisDominica_migration.html" width="600" height="600">
+
 
 ### Climate change in Chicago
 ![climate in chicago](img/chicago_maxtemp.png)
