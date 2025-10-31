@@ -10,7 +10,14 @@ Below are assignments from the CU Boulder Earth Analytics Data Science Course
 ### American Golden Plover Migration Mapping
 <iframe src="https://macaulaylibrary.org/asset/31723881/embed" height="504" width="640" frameborder="0" allowfullscreen></iframe>
 
-<embed type="text/html" src="maps/pluvialisDominica_migration.html" width="600" height="600">
+<iframe width="560" height="315"
+        src="https://www.youtube.com/embed/bxygINPm5zY?start=30"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+</iframe>
+
+<embed type="text/html" src="maps/pluvialisDominica_migration.html" width="1200" height="1200">
 
 
 ### Climate change in Chicago
