@@ -32,7 +32,7 @@ href="https://www.allaboutbirds.org/guide/American_Golden-Plover/overview">Birds
 
 #### The migration patterns of the American golden plover according to GBIF observations.
 **Note:** See the code that created this and a deeper explanation of the methods [here](https://natshoff.github.io/portfolioPosts/pluvialisDominica_portfolio.html)!
-<embed type="text/html" src="maps/pluvialisDominica_migration.html" width="800" height="800">
+<embed type="text/html" src="maps/pluvialisDominica_migration.html" width="600" height="800">
 
 #### How do these three sources for migration information on the American golden plover compare?
 **Birds of the World and Brad:** We can see clearly that Brad Harris and Birds of the World are on the same page. The map shows that the American golden plover spends it's non-breeding overwintering time in northern Argentina, and migrates through both Guatemala and Illinois on it's way to breed in the tundra. 
