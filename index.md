@@ -7,6 +7,27 @@ I am a Project Manager for the Balch Fire Lab and The North Central Regional Inv
 ## Data Exploration
 Below are assignments from the CU Boulder Earth Analytics Data Science Course
 
+### Gila River Region - Agricultural NDVI
+The Akimel O’‘otham and Tohono O’’odham tribes of the Gila River region in south-central Arizona had 653,500 acre-feet of water annually restored to their use in 2004 [[1]](https://www.justice.gov/enrd/indian-resources-section/gila-river-indian-community). Using remotely sensed vegetation health data from [MODIS](https://modis.gsfc.nasa.gov/data/dataprod/mod13.php) and landuse from the [Annual National Land Cover Database (NLCD)](https://www.usgs.gov/centers/eros/science/annual-national-land-cover-database), I investiagted the impact of this settlement on the cultivated croplands of the region. **Note:** See the code that created these figures and a deeper explanation of the methods [here](https://natshoff.github.io/portfolioPosts/vegetation-05-portfolio.html)!
+
+#### Changing Croplands in the Gila River Region
+![gila_cropchange](img/ag_landuse_change.png)
+***Figure 1:** Comparing landuse of cultivated crops between 2001 and 2022. Pink pixels show cropland that is only present in the 2001, light green is cropland only present in 2022, and dark green represents cropland present in both 2001 and 2022. Biege areas represent non-cropland.*
+
+#### Cropland NDVI between 2001 and 2022
+![ndvi_decades](img/mean_NDVI_crops.png)
+***Figure 2:** Mean NDVI for two decades, 2001-2011 (left) and 2012-2022 (center). Difference between these decades shows the change in NDVI (right).*
+
+#### Differences in cropland NDVI between tribal and non-tribal lands
+![ndvi_difference](img/ndvi_difference.png)
+***Figure 3:** Difference in NDVI inside and outside the Gila Tribal Area. Green bars represent years where the Tribal NDVI > surrounding area, and red bars represent years where Tribal Area NDVI < surrounding area.*
+
+#### **Conclusions**
+When assessing the impact of restoring water rights to the Akimel O’‘otham and Tohono O’’odham people, cropland NDVI tells an incomplete story. When comparing annual mean NDVI for inside the Gila Tribal lands and the surrounding area, Gila crops had a higher NDVI 17 out of 22 years for the study period. This makes it seem as if there were no signal of increased plant health on Gila lands from restoring water rights. This lack of signal could instead be explained by tribal ares prioritizing water to agricultural production, both before and after winning their settlement. What is a better indicator of these restored right on Gila crop production is in the expanded land use when comparing 2001 and 2021 NLCD cover classes. While areas surrounding Gila **lost** cropland, Gila lands **gained or maintained** cropland.
+
+This is only part of the complicated story about the possible impact that restoring water rights has on a community. Additional analyses could focus on non-agricultural or non-irrigated land to see if these vegetation types are healthier as a result of greater access to water.
+
+
 ### American Golden Plover Migration Mapping
 Investigating the migration patterns of the American golden plover (*Pluvialis dominica*), a bird with an ~24,000 km (~15,000 miles) long yearly migration journey [(1)](https://www.frontiersin.org/journals/ecology-and-evolution/articles/10.3389/fevo.2021.710007/full). Their southern migration route even contains a 3000-5000 km stretch of flight that is entirely over the Atlantic Ocean, meaning these birds cannot stop to rest or feed during this time [(2)](https://www.jstor.org/stable/1366605?casa_token=wtKsQEdXUHwAAAAA%3AM9SB-dQYZ8tHxZH8ErOAosejJCVK5YAF-7ZFgPzXZKqZGBY9flhzqmcCUrz53s2OdZ3rIriJK7n8rJ4yHzNZswPSChv3XFyVbuYgkGRfKBKrE2006hqF).
 
