@@ -12,7 +12,7 @@ The Akimel O’‘otham and Tohono O’’odham tribes of the Gila River region 
 
 #### Changing Croplands in the Gila River Region
 ![gila_cropchange](img/ag_landuse_change.png)
-***Figure 1:** Comparing landuse of cultivated crops between 2001 and 2022. Pink pixels show cropland that is only present in the 2001, light green is cropland only present in 2022, and dark green represents cropland present in both 2001 and 2022. Biege areas represent non-cropland.*
+***Figure 1:** Comparing landuse of cultivated crops between 2001 and 2022. Pink pixels show cropland that is only present in the 2001, light green is cropland only present in 2022, and dark green represents cropland present in both 2001 and 2022. Beige areas represent non-cropland.*
 
 #### Cropland NDVI between 2001 and 2022
 ![ndvi_decades](img/mean_NDVI_crops.png)
