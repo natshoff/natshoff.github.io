@@ -8,7 +8,7 @@ I am a Project Manager for the Balch Fire Lab and The North Central Regional Inv
 Below are assignments from the CU Boulder Earth Analytics Data Science Course
 
 ### Mapping Greater sage-grouse occurrence across BLM Habitat Management Areas (HMAs)
-The Greater sage-grouse (*Centrocercus urophasianus*) is a threatened species endemic to the Sagebrush steppe ecosystem of Western North America [ref]. The Bureau of Land Management (BLM) manages the largest share of Greater sage-grouse habitat in the United States, a total of 65 million acres [refs]. I investigated Greater sage-grouse occurrence patterns across BLM land using Global Biodiversity Information Facility (GBIF) data to assess if high occurrence was associated with high-priority BLM habitat.
+The Greater sage-grouse (*Centrocercus urophasianus*) is a threatened species endemic to the Sagebrush steppe ecosystem of Western North America [(Prochazka et al., 2025)](https://pubs.usgs.gov/publication/dr1217). The Bureau of Land Management (BLM) manages the largest share of Greater sage-grouse habitat in the United States, a total of 65 million acres [BLM, 2024](blm.gov/programs/fish-and-wildlife/sage-grouse). I investigated Greater sage-grouse occurrence patterns across BLM land using Global Biodiversity Information Facility (GBIF) data to assess if high occurrence was associated with high-priority BLM habitat.
 
 #### Who is the Greater sage-grouse?
 <iframe width="560" height="315"
