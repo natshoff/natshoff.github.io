@@ -56,7 +56,7 @@ I queried GBIF for all Greater sage-grouse observations between 2015 and 2024. E
 ***Figure 3:*** Raw number of GBIF observations (colored hexagons) across BLM management areas (light grey outlines).
 
 #### Let's normalize
-I calculated a normalized occurrence value to account for changes in yearly increases in the number of Greater sage-grouse observations and the hotspots we saw in the raw data. 
+I calculated a normalized occurrence value for each HMA and year to account for changes in yearly increases in the number of Greater sage-grouse observations and the hotspots we saw in the raw data. 
 
 ```
 # Normalize by space and time for sampling effort
