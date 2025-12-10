@@ -17,7 +17,7 @@ The Greater sage-grouse (*Centrocercus urophasianus*) is a threatened species en
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
 </iframe>
-Male Greater sage-grouse maintain mating territories called "leks", and display the behavior "lekking" shown in the video above during mating season.
+Male Greater sage-grouse maintain mating territories called "leks" [(Rathor et al., 2023)](https://pmc.ncbi.nlm.nih.gov/articles/PMC9939265/), and display the behavior "lekking" shown in the video above during mating season.
 
 Sage-grouse are sagebrush obligates that depend on sagebrush for food, cover, and mating grounds. These birds are an indicator species for other sagebrush obligates like the pygmy rabbit, sagebrush vole, sage thrasher, and sage sparrow [(USGS, 2011)](https://www.usgs.gov/publications/chapter-2-sagebrush-associated-species-conservation-concern). Sagebrush habitat is being lost to development, invasive grass spread, and woody encroachment. Habitat loss has led to Greater sage-grouse populations declining by 78.8% since 1960 [(Prochazka et al., 2025)](https://pubs.usgs.gov/publication/dr1217). 
 
@@ -28,7 +28,7 @@ Here is how the BLM divides regional HMAs:
 ![blm_hma](img/fp_blm_regions.png)
 ***Figure 1:*** BLM HMAs colored by region.
 
-Below is a table with the different assigned **habitat types** and my interpretation of their relative priorities based on nationwide BLM language [ref]. **Important note:** these are not BLM-sanctioned "priorities", rather they are my attempt to simplify a multitude of acronyms and are inferred from reading through BLM Greater Sage-Grouse Habitat Management Area State-by-State Mapping Strategies [refs].
+Below is a table with the different assigned **habitat types** and my interpretation of their relative priorities based on nationwide BLM language [(BLM, 2020)](https://eplanning.blm.gov/public_projects/2016719/200502020/20050224/250056407/Greater%20Sage-Grouse%20Five-year%20Monitoring%20Report%202020.pdf?_gl=1*15cchyn*_ga*MTE2MzA5NzIxLjE3NTQzMjgyMTU.*_ga_GQKKTMMT8V*czE3NjUzODg2MDMkbzI3JGcxJHQxNzY1Mzg4NjY4JGo2MCRsMCRoMA..). **Important note:** these are not BLM-sanctioned "priorities", rather they are my attempt to simplify a multitude of acronyms and are inferred from reading through BLM Greater Sage-Grouse Habitat Management Area State-by-State Mapping Strategies.
 
 **Habitat Types in our data**
 
@@ -47,7 +47,7 @@ Below is a table with the different assigned **habitat types** and my interpreta
 ![blm_prio](img/fp_blm_prio.png)
 ***Figure 2:*** BLM HMAs colored by **my** assigned priority.
 
-Mapping low, medium, and high priority areas reveals a distinct spatial pattern in habitat priority. Nevada and northeastern California have the highest amount of "low quality" habitat. In BLM-speak, these areas are "Other Habitat Management Area," where either (1) there is little information known about Greater sage-grouse habitat, or (2) the habitat is degraded in quality [BLM, 2015](https://eplanning.blm.gov/public_projects/2016719/200502020/20122939/251022919/Appendix_03_GRSG_HMA_Strategy_Summaries_508.pdf#:~:text=Priority%20habitat%20(PHMA)%20includes%20areas%20with%20relatively,maintaining%20the%20extent%20of%20the%20GRSG%20range.). Nevada faces challenges in habitat loss from both invasive annual grasses [refs] and mining development [refs], which impact the quality of Greater sage-grouse habitat [refs].
+Mapping low, medium, and high priority areas reveals a distinct spatial pattern in habitat priority. Nevada and northeastern California have the highest amount of "low quality" habitat. In BLM-speak, these areas are "Other Habitat Management Area," where either (1) there is little information known about Greater sage-grouse habitat, or (2) the habitat is degraded in quality [BLM, 2015](https://eplanning.blm.gov/public_projects/2016719/200502020/20122939/251022919/Appendix_03_GRSG_HMA_Strategy_Summaries_508.pdf#:~:text=Priority%20habitat%20(PHMA)%20includes%20areas%20with%20relatively,maintaining%20the%20extent%20of%20the%20GRSG%20range.). This region of the Great Basin faces challenges in habitat loss from both increasing invasive annual grasses [(Roche et al., 2024)](https://www.sciencedirect.com/science/article/pii/S0190052824000774?) and land use conversion (e.g. energy, pastures, mining) [(Conover & Roberts, 2016)](https://www.jstor.org/stable/24874178?seq=1), which impact the quality of Greater sage-grouse habitat.
 
 #### GBIF occurrence data
 I queried GBIF for all Greater sage-grouse observations between 2015 and 2024. Examining the raw yearly occurrence data reveals increasing yearly observations and "hotspots" where there are consistently high observations (Figure 3). 
