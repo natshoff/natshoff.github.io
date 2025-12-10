@@ -12,12 +12,14 @@ The Greater sage-grouse (*Centrocercus urophasianus*) is a threatened species en
 
 #### Who is the Greater sage-grouse?
 <iframe width="560" height="315"
-        src="https://www.youtube.com/watch?v=Sh5EOGeP540"
+        src="https://www.youtube.com/embed/Sh5EOGeP540?si=CMtNZHlpnSPMEhwp"
         title="YouTube video player" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
 </iframe>
-Male Greater sage-grouse maintain mating territories called "leks", and display the behavior shown in the video above during mating season, when females visit these leks.  
+Male Greater sage-grouse maintain mating territories called "leks", and display the behavior "lekking" shown in the video above during mating season.
+
+Sage grouse are sagebrush obligates that depend on sagebrush for food, cover, and mating grounds. These birds are an indicator species for other sagebrush obligates like the pygmy rabbit, sagebrush vole, sage thrasher and sage sparrow [(USGS, 2011)](https://www.usgs.gov/publications/chapter-2-sagebrush-associated-species-conservation-concern). Sagebrush habitat it being lost to development, invasive grass spread, and woody encroachment. Habitat loss has lead to Greater sage-grouse populations have declining by 78.8 % since 1960 [(Prochazka et al., 2025)](https://pubs.usgs.gov/publication/dr1217). 
 
 #### How do BLM HMAs work?
 It's more confusing than you might initially guess. BLM organizes Greater sage-grouse land into Habitat Management Areas (HMAs) based on **regional** Environmental Impact Assessments (EIS) which are assigned a **habitat type** based on the quality of the land and intended management actions. BLM **regions**, and some states use different **habitat type** verbage. 
@@ -46,7 +48,7 @@ INSERT PRIORITY MAP HERE
 
 Mapping low, medium, and high priority areas reveals a distinct spatial pattern in habitat priority. Nevada and north eastern California have the highest amount of "low quality" habitat. In BLM speak, these areas are "Other Habitat Management Area", where either (1) there is little information known about Greater sage-grouse habitat, or (2) the habitat is degraded in quality [BLM, 2015](https://eplanning.blm.gov/public_projects/2016719/200502020/20122939/251022919/Appendix_03_GRSG_HMA_Strategy_Summaries_508.pdf#:~:text=Priority%20habitat%20(PHMA)%20includes%20areas%20with%20relatively,maintaining%20the%20extent%20of%20the%20GRSG%20range.). Nevada faces challenges in habtiat loss from both invasive annual grasses [refs] and mining development [refs], which both impact the quality of Greater sage-grouse habitat quality [refs].
 
-#### 
+#### GBIF occurrence 
 
 
 ### Gila River Region - Agricultural NDVI
