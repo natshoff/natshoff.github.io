@@ -22,7 +22,7 @@ Male Greater sage-grouse maintain mating territories called "leks", and display 
 Sage grouse are sagebrush obligates that depend on sagebrush for food, cover, and mating grounds. These birds are an indicator species for other sagebrush obligates like the pygmy rabbit, sagebrush vole, sage thrasher and sage sparrow [(USGS, 2011)](https://www.usgs.gov/publications/chapter-2-sagebrush-associated-species-conservation-concern). Sagebrush habitat it being lost to development, invasive grass spread, and woody encroachment. Habitat loss has lead to Greater sage-grouse populations have declining by 78.8 % since 1960 [(Prochazka et al., 2025)](https://pubs.usgs.gov/publication/dr1217). 
 
 #### How do BLM HMAs work?
-It's more confusing than you might initially guess. BLM organizes Greater sage-grouse land into Habitat Management Areas (HMAs) based on **regional** Environmental Impact Assessments (EIS) which are assigned a **habitat type** based on the quality of the land and intended management actions. BLM **regions**, and some states use different **habitat type** verbage. 
+It's more confusing than you might initially guess. BLM organizes Greater sage-grouse land into Habitat Management Areas (HMAs) based on **regional** Environmental Impact Assessments (EIS) which are assigned a **habitat type** based on the quality of the land and intended management actions. Different BLM **regions** use different **habitat type** verbage to describe the goals of their HMAs. 
 
 Here is how the BLM divides regional HMAs:
 INSERT REGIONAL MAP HERE
@@ -31,6 +31,7 @@ INSERT REGIONAL MAP HERE
 Below is a table with the different assigned **habitat types** and my intepretation of their relative priorities based on nation-wide BLM language [ref]. **Important note:** these are not BLM-sanctioned "priorities", rather they are my attempt to simplify a multitude of acronyms, and are inferred from reading through BLM Greater Sage-Grouse Habitat Management Area Stateby-State Mapping Strategies [refs].
 
 **Habitat Types in our data**
+
 | Acronym | Full Name | Region of Use | Assigned Priority Tier |
 | ------- | --------- | ------------- | ---------------------- |
 | PHMA | Priority Habitat Management Area | Range-wide | High |
@@ -48,7 +49,32 @@ INSERT PRIORITY MAP HERE
 
 Mapping low, medium, and high priority areas reveals a distinct spatial pattern in habitat priority. Nevada and north eastern California have the highest amount of "low quality" habitat. In BLM speak, these areas are "Other Habitat Management Area", where either (1) there is little information known about Greater sage-grouse habitat, or (2) the habitat is degraded in quality [BLM, 2015](https://eplanning.blm.gov/public_projects/2016719/200502020/20122939/251022919/Appendix_03_GRSG_HMA_Strategy_Summaries_508.pdf#:~:text=Priority%20habitat%20(PHMA)%20includes%20areas%20with%20relatively,maintaining%20the%20extent%20of%20the%20GRSG%20range.). Nevada faces challenges in habtiat loss from both invasive annual grasses [refs] and mining development [refs], which both impact the quality of Greater sage-grouse habitat quality [refs].
 
-#### GBIF occurrence 
+#### GBIF occurrence data
+I queried GBIF for all Greater sage-grouse observations between 2015 and 2024. Examining the raw yearly occurrence data reveals increasing yearly observations and "hotspots" where there are consistently high observtions (Figure 3). 
+
+INSERT RAW GBIF OBSERVATIONS HERE
+***Figure 3:*** Raw number of GBIF observations (colored hexagons) across BLM management areas (light grey outlines).
+
+#### Let's normalize
+I calculated a normalized occurrence value to account for changes in yearly increases in the number of Greater sage-grouse observations and the hot-spots we saw in the raw data. 
+
+$$
+\text{norm\_occurrences} = \frac{\text{density}}{\text{mean\_occurrences\_by\_year}} \div \text{mean\_occurrences\_by\_hma}
+$$
+
+Normalization will help us account for both variation in the number of occurrence records per year and the size difference between the different areas. Both are shown here summed by priority level instead of HMA.
+
+INSERT OBS OVER TIME FIGURE
+***Figure 3:*** Number of GBIF observations for HMAs between 2015 - 2024.
+
+INSERT PRIORITY AREA FIGURE
+***Figure 4:*** Size comparison between low, medium, and high priority HMAs.
+
+INSERT NORMALIZED OCCURRENCE FIGURE
+***Figure 5:*** Normalized occurrence data for each BLM HMA between 2016 and 2025. 
+
+We see substanail variation in occurrence across the HMAs year-to-year. Generally, we see higher occurrence in the higher priority, core Wyoming habitat, but this is not consistent throughout the record. The absence of a clear pattern could suggest our normaliztion is not accouting for the skewed nature of our data (higher observations in later years, hot-spot near Coalmont, CO). It could also reflect variation in ease of access for sampling Greater sage-grouse. Sagebrush habitat can be extremely remote and most GBIF observations come from citizen science platforms like e-bird and iNaturalist, our sampling here is not even across the sagebrush. 
+
 
 
 ### Gila River Region - Agricultural NDVI
