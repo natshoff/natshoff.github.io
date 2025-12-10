@@ -71,10 +71,12 @@ INSERT PRIORITY AREA FIGURE
 ***Figure 4:*** Size comparison between low, medium, and high priority HMAs.
 
 INSERT NORMALIZED OCCURRENCE FIGURE
-***Figure 5:*** Normalized occurrence data for each BLM HMA between 2016 and 2025. 
+***Figure 5:*** Normalized occurrence data for each BLM HMA between 2016 and 2025. Note: remember the "low" priority areas are located along the edges of the BLM HSAs in Nevada. Scroll up to figure 2 for a reference. 
 
-We see substanail variation in occurrence across the HMAs year-to-year. Generally, we see higher occurrence in the higher priority, core Wyoming habitat, but this is not consistent throughout the record. The absence of a clear pattern could suggest our normaliztion is not accouting for the skewed nature of our data (higher observations in later years, hot-spot near Coalmont, CO). It could also reflect variation in ease of access for sampling Greater sage-grouse. Sagebrush habitat can be extremely remote and most GBIF observations come from citizen science platforms like e-bird and iNaturalist, our sampling here is not even across the sagebrush. 
+We see substanail variation in occurrence across the HMAs year-to-year. Generally, we see higher occurrence in the higher priority, core Wyoming habitat, but this is not consistent throughout the record. The absence of a clear pattern could suggest our normaliztion is not accouting for the skewed nature of our data (higher observations in later years, hot-spot near Coalmont, CO). It could also reflect variation in ease of access for sampling Greater sage-grouse. Sagebrush habitat can be extremely remote and most GBIF observations come from citizen science platforms like e-bird and iNaturalist, our sampling here is not even across the sagebrush. It should also be noted that the Greater sage-grouse is non-migratory and thus using raw occurrence data here could include duplicate observations of the same individuals. 
 
+#### In conclusion, there's more work to do to
+Our normalization approach did not reveal a clear pattern of Greater sage-grouse occurrence on BLM land. Further investigation into using citizen-science-gathered non-migratory bird data could reveal better methods for normalizing these data. Using a different data source, such as a Sagebrush Conservation Design core/growth habitat, could reveal more ecologically meaningful occurrence trends compared to jurisdictional areas drawn by the BLM. Unfortunately/fortunately, the data currently leave more questions than answers!
 
 
 ### Gila River Region - Agricultural NDVI
