@@ -7,6 +7,20 @@ I am a Project Manager for the Balch Fire Lab and The North Central Regional Inv
 ## Data Exploration
 Below are assignments from the CU Boulder Earth Analytics Data Science Course
 
+### Chicago Urban Greenspace and Chronic Obstructive Pulmonary Disease (COPD) Prevalence
+Chronic Obstructive Pulmonary Disease (COPD) is a lung condition characterized by inflammation of the airways, limiting airflow to the lungs. The most common cause of COPD is long-term exposure to irritating smoke, fumes, dust, and chemicals ([Mayo Clinic](https://www.mayoclinic.org/diseases-conditions/copd/symptoms-causes/syc-20353679)).
+
+Because COPD can be caused by environmental exposure, I was curious about the spatial incidence across an urban area like Chicago. Investigating some of the literature relating COPD to greenspace, I found contrasting evidence suggesting there are region-specific relationships between COPD incidence/mortality and greenspace.
+
+One study conducted across Chongqing, China found township-specific relationships between COPD mortality and greenspace. Despite evidence that greenspace can reduce the incidence of lung disease ([Li et al., 2019](https://www.mdpi.com/1660-4601/16/6/991)), this study found that in some regions, COPD related mortality was positive correlated with greenspace ([Gou et al., 2023](link.springer.com/article/10.1186/s12890-023-02359-x#ref-CR10)). Gou et al pointed out that these regions were typically more rural, and thus increased COPD mortality could be due to lack of access to medical treatment rather than as a result of greenspace. 
+
+Another study conducted by [Maas et al., 2009](https://jech.bmj.com/content/63/12/967.short) in the Netherlands show that COPD and asthma (and other indicators of health) are lower in areas with higher greenspace.
+
+Given the highly regional and context specific trends for COPD incidence and greenspace, I was curious to examine their relationship in Chicago.
+
+
+
+
 ### Mapping Greater sage-grouse occurrence across BLM Habitat Management Areas (HMAs)
 The Greater sage-grouse (*Centrocercus urophasianus*) is a threatened species endemic to the sagebrush steppe ecosystem of Western North America [(Prochazka et al., 2025)](https://pubs.usgs.gov/publication/dr1217). The Bureau of Land Management (BLM) manages the largest share of Greater sage-grouse habitat in the United States, a total of 65 million acres [BLM, 2024](blm.gov/programs/fish-and-wildlife/sage-grouse). I investigated Greater sage-grouse occurrence patterns across BLM land using Global Biodiversity Information Facility (GBIF) data to assess if high occurrence was associated with high-priority BLM habitat. See the full code workflow [here](https://natshoff.github.io/portfolioPosts/centrocercusUrophasianus_portfolio_final.html)
 
