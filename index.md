@@ -8,6 +8,7 @@ I am a Project Manager for the Balch Fire Lab and The North Central Regional Inv
 Below are assignments from the CU Boulder Earth Analytics Data Science Course
 
 ### Chicago Urban Greenspace and Chronic Obstructive Pulmonary Disease (COPD) Prevalence
+See the code used to generate these figures [here](portfolioPosts/CDC_portfolioPost.html)!
 
 #### Background
 Chronic Obstructive Pulmonary Disease (COPD) is a lung condition characterized by inflammation of the airways, limiting airflow to the lungs. The most common cause of COPD is long-term exposure to irritating smoke, fumes, dust, and chemicals ([Mayo Clinic](https://www.mayoclinic.org/diseases-conditions/copd/symptoms-causes/syc-20353679)).
