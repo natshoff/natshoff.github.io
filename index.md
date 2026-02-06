@@ -8,6 +8,8 @@ I am a Project Manager for the Balch Fire Lab and The North Central Regional Inv
 Below are assignments from the CU Boulder Earth Analytics Data Science Course
 
 ### Chicago Urban Greenspace and Chronic Obstructive Pulmonary Disease (COPD) Prevalence
+
+#### Background
 Chronic Obstructive Pulmonary Disease (COPD) is a lung condition characterized by inflammation of the airways, limiting airflow to the lungs. The most common cause of COPD is long-term exposure to irritating smoke, fumes, dust, and chemicals ([Mayo Clinic](https://www.mayoclinic.org/diseases-conditions/copd/symptoms-causes/syc-20353679)).
 
 Because COPD can be caused by environmental exposure, I was curious about the spatial incidence across an urban area like Chicago. Investigating some of the literature relating COPD to greenspace, I found contrasting evidence suggesting there are region-specific relationships between COPD incidence/mortality and greenspace.
@@ -18,7 +20,31 @@ Another study conducted by [Maas et al., 2009](https://jech.bmj.com/content/63/1
 
 Given the highly regional and context specific trends for COPD incidence and greenspace, I was curious to examine their relationship in Chicago.
 
+#### Methods
+I downloaded Chicago census trancts and joined them to 2023 COPD data from the [CDC PLACES dataset](https://www.cdc.gov/places/tools/data-portal.html). These data show % COPD incidence within each transect. I downloaded aerial imagery from the [National Agriculture Imagery Program (NAIP)](https://naip-usdaonline.hub.arcgis.com/) through the Microsoft Planetary Computer SpatioTemporal Access Catalog (STAC). Using the spectra from this imagery, I calculated several Normalized Difference Vegetation Index (NDVI)-based measures of greenness per tract (e.g. mean patch size, fraction of vegetation, edge density).
 
+<embed type="text/html" src="img/copd_green.html" width="600" height="600">
+**Figure 1:** Comparison between adult COPD rate and vegetation edge density across Chicago census tracts.
+
+I then performed ordinary least squares (OLS) regression on log-transformed copd rates, using log-transformed mean patch size and untransformed edge density. I used 30% of the data for training, and validated and tested using the remaing 70%.
+
+#### Results
+
+<embed type="text/html" src="img/copd_model.html" width="600" height="600">
+**Figure 2:** Predicted vs. measured COPD prevalence using our OLS model.
+
+Our model and the vegetation predictors (edge density and patch size) do a poor job predicting COPD rates across the city. A strong model would show a linear relationship between measured and predicted COPD prevalence. 
+
+#### Conclusions
+
+<embed type="text/html" src="img/copd_error.html" width="600" height="600">
+**Figure 3:** Spatial distribution of model prediction error across the Chicago transects.
+
+**Spatial distribution of error**
+We underestimate COPD rates in south and western areas of the city, and over estimates in the northern and central parts. This pattern mirrors the spatial distribution of COPD rates in the city, seen in our map plotting the raw PLACES data on the city. 
+
+**How to improve these results**
+It seem that our model has some degree of spatial autocorrelation that we aren't accounting for. We could start by adding latitude and longitude as predictor variables as a way of explaining some of the variation we're seeing. If these issues persist, we could pivot to a model like geographically weighted regression, which can help account for the non-stationarity we're seeing in our data [(Columbia, Mailman School of Public Health)](https://www.publichealth.columbia.edu/research/population-health-methods/geographically-weighted-regression).
 
 
 ### Mapping Greater sage-grouse occurrence across BLM Habitat Management Areas (HMAs)
