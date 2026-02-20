@@ -7,6 +7,16 @@ I am a Project Manager for the Balch Fire Lab and The North Central Regional Inv
 ## Data Exploration
 Below are assignments from the CU Boulder Earth Analytics Data Science Course
 
+### Proving the obvious: land use classification is easier in Iowa croplands than in Louisiana marshes
+
+#### Background
+We recently completed an assignment where we were asked to cluster pixels from (Harmonized Landsat Sentinel-2)[https://hls.gsfc.nasa.gov/] data for the HUC12 watershed, Manuel Canal–Spanish Lake, near New Orleans, LA. This is a structurally diverse watershed characterized by water, wetlands, and some low upland ridges ([Day et al., 2007](https://www.science.org/doi/abs/10.1126/science.1137030?casa_token=8qqvl73qt8EAAAAA:nw9f2I21ih5y5DKEaxK_P-ArBFFR_YKMf7RMZQsoKkjCqjkQDWMkuKy-TrJQC9X9PArSV3aCd_GbB9s)). This area alos experinces year-to-year variation in inundated area ([Sentinel 2 Land Cover Explorer](https://livingatlas.arcgis.com/landcoverexplorer/#mapCenter=-89.86717%2C29.74925%2C11.95&mode=step&timeExtent=2017%2C2024&year=2024&showImageryLayer=true&renderingRule=0)). The region is experiencing wide-spread wetland loss due to sea level rise, reduced sediement transport from the Mississippi River, and canal construction ([Day et al., 2007](https://www.science.org/doi/abs/10.1126/science.1137030?casa_token=8qqvl73qt8EAAAAA:nw9f2I21ih5y5DKEaxK_P-ArBFFR_YKMf7RMZQsoKkjCqjkQDWMkuKy-TrJQC9X9PArSV3aCd_GbB9s)).
+
+We used a k-means clustering approach to group pixels into classes for this area based on the values from nine spectral bands. Unsurprisingly, our clustering algorithm failed to resolve meaningful clusters in this highly diverse landscape. I was curious how this same algorithm might work in a much more homogenous landscape, like midwestern croplands. Midwestern corn and soybean farms tend to rotate between these two crops and sometimes leave fields fallow to rest. This allows farmers to take advantage of the nitrogen fixing properties of soybeans, and means they need to use less fertilizer when growing corn in the same field [(Pederson & Lauer, 2002)](https://www.news.iastate.edu/news/corn-and-soybean-rotation-could-pose-long-term-tradeoffs-soil-health](https://acsess.onlinelibrary.wiley.com/doi/abs/10.2134/agronj2002.9680). 
+
+#### Meet the Headwaters Beaver Creek Subwatershed
+For this more structurally simple watershed, I set out for Iowa. I chose an area that highly homogenous landuse according to the [Sentinel 2 Land Cover Explorer](https://livingatlas.arcgis.com/landcoverexplorer/#mapCenter=-92.99753%2C42.67182%2C11.36&mode=step&timeExtent=2017%2C2024&year=2024&renderingRule=0&month=9) near Iowa Falls, IA, and downloaded the corresponding watershed from the [Water Boundary Dataset](https://www.usgs.gov/national-hydrography/access-national-hydrography-products), HU12 watersheds (WBDHU12.shp).
+
 ### Chicago Urban Greenspace and Chronic Obstructive Pulmonary Disease (COPD) Prevalence
 See the code used to generate these figures [here](portfolioPosts/CDC_portfolioPost.html)!
 
