@@ -34,9 +34,10 @@ In addition to clustering on simpler data, I also ran a [silhouette algorithm](h
 
 
 <embed type="text/html" src="maps/crops_cluster_plot.html" width="600" height="600">
-**Figure 4:** (Left) Red, Green, Blue (RGB) plot and (Right) cluster plot (k=3) for the Headwaters Beaver Creek Subwatershed.
+**Figure 4:** (Left) Red, Green, Blue (RGB) plot and (Right) cluster plot (k=3) for the Headwaters Beaver Creek Subwatershed (cluster 0 (red), cluster 1 (light purple), cluster 2 (dark purple).
 
-The simpler data are much
+The simpler crop data cluster much cleaner than the diverse delta data. Cluster 0 (red) appears to be fallow fields / roads, cluster 1 (light purple) is associated with lush green crop fields (likely corn), and cluster 2 (dark purple) appear to be transitions between the two.  
+
 
 ### Chicago Urban Greenspace and Chronic Obstructive Pulmonary Disease (COPD) Prevalence
 See the code used to generate these figures [here](portfolioPosts/CDC_portfolioPost.html)!
