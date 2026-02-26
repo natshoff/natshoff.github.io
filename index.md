@@ -10,13 +10,13 @@ Below are assignments from the CU Boulder Earth Analytics Data Science Course
 ### Proving the obvious: land use classification is easier in Iowa croplands than in Louisiana marshes
 
 #### Background
-We recently completed an assignment where we were asked to cluster pixels from (Harmonized Landsat Sentinel-2)[https://hls.gsfc.nasa.gov/] data for the HUC12 watershed, Manuel Canal–Spanish Lake, near New Orleans, LA. This is a structurally diverse watershed characterized by water, wetlands, and some low upland ridges ([Day et al., 2007](https://www.science.org/doi/abs/10.1126/science.1137030?casa_token=8qqvl73qt8EAAAAA:nw9f2I21ih5y5DKEaxK_P-ArBFFR_YKMf7RMZQsoKkjCqjkQDWMkuKy-TrJQC9X9PArSV3aCd_GbB9s)). This area alos experinces year-to-year variation in inundated area ([Sentinel 2 Land Cover Explorer](https://livingatlas.arcgis.com/landcoverexplorer/#mapCenter=-89.86717%2C29.74925%2C11.95&mode=step&timeExtent=2017%2C2024&year=2024&showImageryLayer=true&renderingRule=0)). The region is experiencing wide-spread wetland loss due to sea level rise, reduced sediement transport from the Mississippi River, and canal construction ([Day et al., 2007](https://www.science.org/doi/abs/10.1126/science.1137030?casa_token=8qqvl73qt8EAAAAA:nw9f2I21ih5y5DKEaxK_P-ArBFFR_YKMf7RMZQsoKkjCqjkQDWMkuKy-TrJQC9X9PArSV3aCd_GbB9s)).
+We recently completed an assignment where we were asked to cluster pixels from [Harmonized Landsat Sentinel-2](https://hls.gsfc.nasa.gov/) data for the HUC12 watershed, Manuel Canal–Spanish Lake, near New Orleans, LA. This is a structurally diverse watershed characterized by water, wetlands, and some low upland ridges ([Day et al., 2007](https://www.science.org/doi/abs/10.1126/science.1137030?casa_token=8qqvl73qt8EAAAAA:nw9f2I21ih5y5DKEaxK_P-ArBFFR_YKMf7RMZQsoKkjCqjkQDWMkuKy-TrJQC9X9PArSV3aCd_GbB9s)). This area also experiences year-to-year variation in inundated area ([Sentinel 2 Land Cover Explorer](https://livingatlas.arcgis.com/landcoverexplorer/#mapCenter=-89.86717%2C29.74925%2C11.95&mode=step&timeExtent=2017%2C2024&year=2024&showImageryLayer=true&renderingRule=0)). The region is experiencing wide-spread wetland loss due to sea level rise, reduced sediment transport from the Mississippi River, and canal construction ([Day et al., 2007](https://www.science.org/doi/abs/10.1126/science.1137030?casa_token=8qqvl73qt8EAAAAA:nw9f2I21ih5y5DKEaxK_P-ArBFFR_YKMf7RMZQsoKkjCqjkQDWMkuKy-TrJQC9X9PArSV3aCd_GbB9s)).
 
 
 <embed type="text/html" src="maps/delta_cluster_plot.html" width="600" height="600">
-**Figure 1:** Clustering output for the Mississippi Delta wastershed using k=6 clusters. You can see the clustering does a poor job separating out meaningful landuse differences across this diverse vegetation. 
+**Figure 1:** Clustering output for the Mississippi Delta watershed using k=6 clusters. You can see the clustering does a poor job separating out meaningful landuse differences across this diverse vegetation. 
 
-We used a k-means clustering approach to group pixels into classes for this area based on the values from nine spectral bands. Unsurprisingly, our clustering algorithm failed to resolve meaningful clusters in this highly diverse landscape. I was curious how this same algorithm might work in a much more homogenous landscape, like midwestern croplands. Midwestern corn and soybean farms tend to rotate between these two crops and sometimes leave fields fallow to rest. This allows farmers to take advantage of the nitrogen fixing properties of soybeans, and means they need to use less fertilizer when growing corn in the same field [(Pederson & Lauer, 2002)](https://www.news.iastate.edu/news/corn-and-soybean-rotation-could-pose-long-term-tradeoffs-soil-health](https://acsess.onlinelibrary.wiley.com/doi/abs/10.2134/agronj2002.9680). 
+We used a k-means clustering approach to group pixels into classes for this area based on the values from nine spectral bands. Unsurprisingly, our clustering algorithm failed to resolve meaningful clusters in this highly diverse landscape. I was curious how this same algorithm might work in a much more homogenous landscape, like midwestern croplands. Midwestern corn and soybean farms tend to rotate between these two crops and sometimes leave fields fallow to rest. This allows farmers to take advantage of the nitrogen fixing properties of soybeans, and means they need to use less fertilizer when growing corn in the same field [(Pederson & Lauer, 2002)](https://acsess.onlinelibrary.wiley.com/doi/abs/10.2134/agronj2002.9680). 
 
 #### Meet the Headwaters Beaver Creek Subwatershed
 For this more structurally simple watershed, I set out for Iowa. I chose an area that highly homogenous landuse according to the [Sentinel 2 Land Cover Explorer](https://livingatlas.arcgis.com/landcoverexplorer/#mapCenter=-92.99753%2C42.67182%2C11.36&mode=step&timeExtent=2017%2C2024&year=2024&renderingRule=0&month=9) near Iowa Falls, IA, and downloaded the corresponding watershed from the [Water Boundary Dataset](https://www.usgs.gov/national-hydrography/access-national-hydrography-products), HU12 watersheds (WBDHU12.shp). See the full code workflow [here](https://natshoff.github.io/portfolioPosts/clusteringCompare_portfolio.html)
@@ -26,7 +26,7 @@ For this more structurally simple watershed, I set out for Iowa. I chose an area
 **Figure 2:** Map of the Headwaters Beaver Creek Subwatershed.
 
 #### Clustering on much simpler data yields simpler results
-In addition to clustering on simpler data, I also ran a [silhouette algorithm](https://www.geeksforgeeks.org/machine-learning/silhouette-algorithm-to-determine-the-optimal-value-of-k/) to evaluate the quality of multiple k-means clusters values (2-9) on 20K randomly sampled text pixels from the dataset. 
+In addition to clustering on simpler data, I also ran a [silhouette algorithm](https://www.geeksforgeeks.org/machine-learning/silhouette-algorithm-to-determine-the-optimal-value-of-k/) to evaluate the quality of multiple k-means clusters values (2-9) on 20K randomly sampled test pixels from the dataset. 
 
 
 <embed type="text/html" src="maps/silhouette_crops.html" width="600" height="600">
@@ -34,7 +34,7 @@ In addition to clustering on simpler data, I also ran a [silhouette algorithm](h
 
 
 <embed type="text/html" src="maps/crops_cluster_plot.html" width="600" height="600">
-**Figure 4:** (Left) Red, Green, Blue (RGB) plot and (Right) cluster plot (k=3) for the Headwaters Beaver Creek Subwatershed (cluster 0 (red), cluster 1 (light purple), cluster 2 (dark purple).
+**Figure 4:** (Left) Red, Green, Blue (RGB) plot and (Right) cluster plot (k=3) for the Headwaters Beaver Creek Subwatershed (cluster 0 (red), cluster 1 (light purple), cluster 2 (dark purple)).
 
 The simpler crop data cluster much cleaner than the diverse delta data. Cluster 0 (red) appears to be fallow fields / roads, cluster 1 (light purple) is associated with lush green crop fields (likely corn), and cluster 2 (dark purple) appear to be transitions between the two.  
 
@@ -47,19 +47,19 @@ Chronic Obstructive Pulmonary Disease (COPD) is a lung condition characterized b
 
 Because COPD can be caused by environmental exposure, I was curious about the spatial incidence across an urban area like Chicago. Investigating some of the literature relating COPD to greenspace, I found contrasting evidence suggesting there are region-specific relationships between COPD incidence/mortality and greenspace.
 
-One study conducted across Chongqing, China found township-specific relationships between COPD mortality and greenspace. Despite evidence that greenspace can reduce the incidence of lung disease ([Li et al., 2019](https://www.mdpi.com/1660-4601/16/6/991)), this study found that in some regions, COPD related mortality was positive correlated with greenspace ([Gou et al., 2023](link.springer.com/article/10.1186/s12890-023-02359-x#ref-CR10)). Gou et al pointed out that these regions were typically more rural, and thus increased COPD mortality could be due to lack of access to medical treatment rather than as a result of greenspace. 
+One study conducted across Chongqing, China found township-specific relationships between COPD mortality and greenspace. Despite evidence that greenspace can reduce the incidence of lung disease ([Li et al., 2019](https://www.mdpi.com/1660-4601/16/6/991)), this study found that in some regions, COPD related mortality was positively correlated with greenspace ([Gou et al., 2023](link.springer.com/article/10.1186/s12890-023-02359-x#ref-CR10)). Gou et al pointed out that these regions were typically more rural, and thus increased COPD mortality could be due to lack of access to medical treatment rather than as a result of greenspace. 
 
 Another study conducted by [Maas et al., 2009](https://jech.bmj.com/content/63/12/967.short) in the Netherlands show that COPD and asthma (and other indicators of health) are lower in areas with higher greenspace.
 
 Given the highly regional and context specific trends for COPD incidence and greenspace, I was curious to examine their relationship in Chicago.
 
 #### Methods
-I downloaded Chicago census trancts and joined them to 2023 COPD data from the [CDC PLACES dataset](https://www.cdc.gov/places/tools/data-portal.html). These data show % COPD incidence within each transect. I downloaded aerial imagery from the [National Agriculture Imagery Program (NAIP)](https://naip-usdaonline.hub.arcgis.com/) through the Microsoft Planetary Computer SpatioTemporal Access Catalog (STAC). Using the spectra from this imagery, I calculated several Normalized Difference Vegetation Index (NDVI)-based measures of greenness per tract (e.g. mean patch size, fraction of vegetation, edge density).
+I downloaded Chicago census tracts and joined them to 2023 COPD data from the [CDC PLACES dataset](https://www.cdc.gov/places/tools/data-portal.html). These data show % COPD incidence within each tract. I downloaded aerial imagery from the [National Agriculture Imagery Program (NAIP)](https://naip-usdaonline.hub.arcgis.com/) through the Microsoft Planetary Computer SpatioTemporal Access Catalog (STAC). Using the spectra from this imagery, I calculated several Normalized Difference Vegetation Index (NDVI)-based measures of greenness per tract (e.g. mean patch size, fraction of vegetation, edge density).
 
 <embed type="text/html" src="img/copd_green.html" width="600" height="600">
 **Figure 1:** Comparison between adult COPD rate and vegetation edge density across Chicago census tracts.
 
-I then performed ordinary least squares (OLS) regression on log-transformed copd rates, using log-transformed mean patch size and untransformed edge density. I used 30% of the data for training, and validated and tested using the remaing 70%.
+I then performed ordinary least squares (OLS) regression on log-transformed copd rates, using log-transformed mean patch size and untransformed edge density. I used 30% of the data for training, and validated and tested using the remaining 70%.
 
 #### Results
 
@@ -71,7 +71,7 @@ Our model and the vegetation predictors (edge density and patch size) do a poor 
 #### Conclusions
 
 <embed type="text/html" src="img/copd_error.html" width="600" height="600">
-**Figure 3:** Spatial distribution of model prediction error across the Chicago transects.
+**Figure 3:** Spatial distribution of model prediction error across the Chicago tracts.
 
 **Spatial distribution of error**
 We underestimate COPD rates in south and western areas of the city, and over estimates in the northern and central parts. This pattern mirrors the spatial distribution of COPD rates in the city, seen in our map plotting the raw PLACES data on the city. 
