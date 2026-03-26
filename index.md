@@ -7,6 +7,135 @@ I am a Project Manager for the Balch Fire Lab and The North Central Regional Inv
 ## Data Exploration
 Below are assignments from the CU Boulder Earth Analytics Data Science Course
 
+### *Bromus inermis* (Smooth brome) habitat suitability at two national grasslands
+
+#### Background
+This coding challenge is to develop a fuzzy logic habitat suitability model 
+for the invasive perennial grass species, *Bromus inermis* (Smooth brome).
+
+I draw on species distribution data from GBIF, climate data from the MACAv2 dataset,
+soil data from Polaris, and topographic data from the NASA Shuttle Radar Topography Mission (SRTMGL3).
+
+Using species tolerance information from the USDA, extension documents, and the scientific literature,
+I create tolerance ranges for this species and investigate habitat suitability at two national grasslands: 
+Pawnee National Grassland (NE Colorado) and Thunder Basin National Grassland (NE Wyoming).
+I investigate how this suitability might change across four different climate scenarios representing
+hot/dry, hot/wet, cold/dry, and cold/wet climate futures. 
+
+#### Smooth brome
+
+<embed type="text/html" src="img/sb.jpg" width="600" height="600">
+
+***Bromus inermis***, also known as smooth brome, is a perennial, cool-season grass native to Eurasia that has been widely introduced across North America. It was intentionally planted for forage production, erosion control, and soil stabilization, and is now broadly distributed across the United States [(USDA)](https://www.fs.usda.gov/database/feis/plants/graminoid/broine/all.html#:~:text=It%20is%20cold%20hardy%20and,rated%20as%20high%20%5B56%5D.). While it can provide short-term benefits for grazing systems, smooth brome often spreads aggressively beyond planted areas, forming dense monocultures that reduce native plant diversity and alter ecosystem structure and function.
+
+This species is not currently listed as a noxious weed in Colorado or Wyoming, yet many land managers recongize the potential negative impact of this species and are working to control it [(City of Louisville)](https://www.louisvilleco.gov/local-government/government/departments/parks-recreation-and-open-space/open-space-division/smooth-broom-study). It may become even more relevant as managers are increasingly using pre-emergent herbicides like imaziflan to control annual invasive grasses. Smooth brome is a perennial grass and thus not affected by this type of herbicide. After the monoculture of annual invasives are removed, perennial invasives like smooth brome can outcompete natives and become a secondary issue [(Lazarus & Germino, 2025)](https://bioone-org.colorado.idm.oclc.org/journals/rangeland-ecology-and-management/volume-102/issue-1/j.rama.2025.06.006/Risks-and-Rewards-of-Pre-Emergent-Herbicide-Indaziflam-to-Defend/10.1016/j.rama.2025.06.006.full).
+
+#### Study sites
+I chose to compare suitability across two National Grasslands, Pawnee and Thunder Basin. Both are managed by the USDA Forest Service and represent diverse grassland/shrubland ecosystems. Noteably, both grasslands are highly fragmented with private parcels interspersed between USDA managed land. This type of fragmentation can make vroad invasive species management difficult, so I was especially curious to asses habitat suitability for smooth brome in areas around the national grasslands.
+
+**Pawnee National Grassland**
+Location: Northeastern Colorado
+Ecology: This area is primarily short (e.g. buffalo grass, blue grama) and mixed-grass 
+(western wheatgrass, needle-and-thread grass) prairie with additional vegetation types 
+(e.g. shrub steppe, scarp woodlands) at higher elevation areas 
+[(Hazlett, 1998)](https://research.fs.usda.gov/treesearch/25015).
+
+**Thunder Basin National Grassland**
+Location: Northeastern Wyoming
+Ecology: This grassland is interesting because it lies along the ecotone between the 
+Great Plains (mixed-grass prairie) to the east and the shrub steppe to the west. This 
+follows a gradient of precipitation, temperature, and elevation. Typical grassland 
+species are blue grama, needle-and-thread, and western wheatgrass, while shrubs are 
+primarily Wyoming big sagebrush 
+[(Porensky & Blumenthal, 2016)](https://link.springer.com/article/10.1007/s10530-016-1225-z).
+
+**Projections for the future**
+Both grasslands are highly fragmented and face risks from climate change and land 
+development. Because private parcels are intermixed within the grasslands, management 
+is difficult to apply across a broad scale. This may also make climate-adapted 
+management more challenging, as land managers will need to contend with both climate 
+variability and changes in land use from private owner development. Land development 
+also represents a vector for invasive species introduction and establishment, as species 
+can be transported on construction equipment [(Westbrooks, 1998)](https://digitalcommons.usu.edu/govdocs/490/), or outcompete natives after 
+disturbance [(Hobbs & Huenneke, 1992)](https://conbio.onlinelibrary.wiley.com/doi/abs/10.1046/j.1523-1739.1992.06030324.x).
+
+<embed type="text/html" src="maps/grasslands_map.html" width="600" height="600">
+***Figure 1:*** Pawnee and Thunder Basin National Grasslands. Note the high degree of fragmentation in each.
+
+#### Climate Models
+I used the [INHABIT tool](https://gis.usgs.gov/inhabit/) from the USGS [(Jarnavich et at., 2024)](https://neobiota.pensoft.net/article/134842/) to determine what environmental factors were most associated with high abundance of smooth brome. The INHABIT tool uses species distribution models to predict habitat suitability for various invasive species. This is similar to our fuzzy model approach but more robust, as these models (MAXNET, BRT, GLM, MARS, RF) are trained using actual plant observations, instead of us manually determining environmental tolerance from the literature.
+
+For the maximum entropy (MAXENT) model, growing season precipitation and mean min winter temperature were the most important for predicting smooth brome high abundance. 
+![image.png](img/inhabit_vars.png) 
+Therefore, I tried to chose climate scenarios using the [Climate Toolbox](https://climatetoolbox.org/tool/Future-Climate-Scatter) that captured the most variation in these characteristics (Hegewisch & Abatzoglou, Future Climate Scatter web tool).
+
+I chose the following models to try and capture hot/dry, hot/wet, cold/dry, and cold/wet climate futures. Note: the models for cold/dry and cold/wet are swapped for Pawnee and Thunder Basin, as they perform differently between these two locations. See figure 3.
+
+| Future Type | Climate Model |
+|---|---|
+| Hot/Dry | HadGEM2-ES365 |
+| Hot/Wet | MIROC-ESM |
+| Cold/Dry | IPSL-CM5A-MR (Pawnee) / MRI-CGCM3 (Thunder Basin) |
+| Cold/Wet | IPSL-CM5A-MR (Thunder Basin) / MRI-CGCM3 (Pawnee) |
+
+I then calculated growing season precipitation by summing precipitation across Apr-Oct for each year and taking the mean across years for each time period. I calculated mean min winter temperature by taking the mean of Dec-Feb minimum temperatures for each time period. 
+
+<embed type="text/html" src="img/clim_models_plot.html" width="600" height="600">
+***Figure 3:*** Selected climate models for each site. Note that the historical mean (1971-2000) for each site is shown in a darker color, and the future mean of 20 CMIP5 climate models (2040-2069) is shown in a lighter color for each site. Climate models were selected to represent hot/dry, hot/wet, cold/dry, and cold/wet climate futures.
+
+#### Soils and Topographic Data
+I used the [POLARIS dataset](http://hydrology.cee.duke.edu/POLARIS/) for pH and bulk density at a depth of 5-15 cm (per the rooting depth noted in [Gist & Smith, 1948](https://acsess.onlinelibrary.wiley.com/doi/abs/10.2134/agronj1948.00021962004000110008x)). This is also consistent with personal experience digging up plant rhizomes of this species. It should be noted that roots can extend as deep as 3 meters in some places [(USDA)](https://www.fs.usda.gov/database/feis/plants/graminoid/broine/all.html#52). I pulled elevation, aspect, and slope from the [NASA Shuttle Radar Topography Mission](https://www.earthdata.nasa.gov/data/catalog/lpcloud-srtmgl3-003), although I drop aspect and slope in the final suitabiltiy assignment as they are very uniform for these grassland sites. 
+
+![image.png](img/ph.png)
+![image.png](img/bd.png)
+***Figure 4:*** Soil characteristics (pH and bulk density) for each site. Note the alkeline soils near Pawnee National Grassland.
+
+![image.png](img/elev.png)
+***Figure 5:*** Topgraphy characteristic (elevation) for each site. Pawnee is higher elevation overall but Thunder Basin exists across a greater range of elevations.
+
+#### Fuzzy Logic Model
+I developed suitability thresholds for each environmental variable as follows:
+
+| Characteristic | Optimal Range | Tolerance Range | Membership | Sources | Notes |
+|---|---|---|---|---|---|
+| Soil pH | 6.0 – 7.0 | 4.5 – 8.0 | Trapezoid | [Penn State Extension](https://extension.psu.edu/smooth-bromegrass); [FEIS](https://www.fs.usda.gov/database/feis/plants/graminoid/broine/all.html); [USDA PLANTS](https://plants.usda.gov/plant-profile/BRIN2/characteristics) | Lower bound from FEIS; general tolerance from USDA PLANTS |
+| Bulk Density | 0.1 – 1.4 g/cm³ | > 1.55 g/cm³ restricts root growth | Trapezoid | [MU Extension](https://extension.missouri.edu/publications/g4672); [USDA PLANTS](https://plants.usda.gov/plant-profile/BRIN2/characteristics); [NRCS Soil Health Guide](https://www.nrcs.usda.gov/sites/default/files/2022-11/Bulk%20Density%20-%20Soil%20Health%20Guide_0.pdf) | Soil type (silt/clay loam) converted to bulk density using NRCS guide |
+| Elevation | 0 – 3235 m | Cannot survive above 3235 m | Trapezoid | [FEIS](https://www.fs.usda.gov/database/feis/plants/graminoid/broine/all.html) | Upper limit based on highest recorded occurrence in Utah; no distinct optimal identified |
+| Growing Season Precip (Apr–Oct) | 381 – 1524 mm | 279 mm (min) – 1524 mm (max) | Trapezoid | [FEIS](https://www.fs.usda.gov/database/feis/plants/graminoid/broine/all.html); [USDA PLANTS](https://plants.usda.gov/plant-profile/BRIN2/characteristics) | Lower optimal and tolerance from FEIS; upper tolerance from USDA PLANTS |
+| Winter Min Temp (Dec–Feb) | > -39°C | Cannot survive below -41.67°C; no upper limit | Linear ramp | [USDA PLANTS](https://plants.usda.gov/plant-profile/BRIN2/characteristics) | No distinct optimal found; suitability increases linearly above lower tolerance threshold |
+
+#### Site suitability
+
+![image.png](maps/pa_allvars.png)
+***Figure 7:*** Site suitabiltiy for Pawnee. Note the low precipitation in the SE moderately limits suitability for smooth brome, but the alkaline soils of the central region are the strongest limiting factor.
+
+![image.png](maps/tb_allvars.png)
+***Figure 8:*** Site suitabiltiy for Thunder Basin. Note the low precipitation in the SE strongly limits suitability for smooth brome.
+
+![image.png](maps/hs_hadgem.png)
+
+![image.png](maps/hs_ipsl.png)
+
+![image.png](maps/hs_miroc.png)
+
+![image.png](maps/hs_mri.png)
+***Figure 9:*** Overall suitability for both sites (Pawnee and Thunder Basin), both time periods (2006-2035; 2036-2070), and four climate models.
+
+| Future Type | Climate Model |
+|---|---|
+| Hot/Dry | HadGEM2-ES365 |
+| Hot/Wet | MIROC-ESM |
+| Cold/Dry | IPSL-CM5A-MR (Pawnee) / MRI-CGCM3 (Thunder Basin) |
+| Cold/Wet | IPSL-CM5A-MR (Thunder Basin) / MRI-CGCM3 (Pawnee) |
+
+Habitat suitability projections under RCP 8.5 (2006-2035; 2036-2070) varied across climate models and sites. MIROC-ESM, the hot/wet future scenario, projected increased suitability across both Pawnee and Thunder Basin, likely reflecting the positive relationship between smooth brome growth and increased growing season precipitation. In contrast, IPSL-CM5A-MR (cold/dry at Pawnee) projected decreased suitability across the entirety of Pawnee National Grassland, while showing modest increases in the northeastern portion of Thunder Basin. HadGEM2-ES365 (hot/dry) also decreased suitability at Pawnee and produced only marginal gains in the northeastern region of Thunder Basin. MRI-CGCM3 (cold/dry at Thunder Basin) projected a slight increase in suitability at Pawnee.
+
+Across models, suitability patterns were driven by growing season precipitation and soil pH, with drier future scenarios consistently producing less suitable conditions. The suitability of the NE portion of Thunder Basin is a reflection of that area experiencing enough rainfall to buffer the effects of a drier climate future. The SE portion (more grassland),does not experience enough rainfall and thus is unsuitable under drier scenarios.
+
+Temperature responses were more difficult to capture due to the limited availability of optimal winter temperature data for smooth brome. The current linear ramp membership function captures the lower threshold (-41.67°C) but does not reflect any thermal optima, which definetely exists for this species. This modelwould benefit strongly from more specific temperature threshold information.
+
+
+
 ### Proving the obvious: land use classification is easier in Iowa croplands than in Louisiana marshes
 
 #### Background
