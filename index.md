@@ -26,7 +26,7 @@ See the full code workflow [here](https://natshoff.github.io/portfolioPosts/brin
 
 #### Smooth brome
 
-<embed type="text/html" src="img/sb.jpg" width="600" height="600">
+![image.png](img/sb.jpg) 
 
 ***Bromus inermis***, also known as smooth brome, is a perennial, cool-season grass native to Eurasia that has been widely introduced across North America. It was intentionally planted for forage production, erosion control, and soil stabilization, and is now broadly distributed across the United States [(USDA)](https://www.fs.usda.gov/database/feis/plants/graminoid/broine/all.html#:~:text=It%20is%20cold%20hardy%20and,rated%20as%20high%20%5B56%5D.). While it can provide short-term benefits for grazing systems, smooth brome often spreads aggressively beyond planted areas, forming dense monocultures that reduce native plant diversity and alter ecosystem structure and function.
 
