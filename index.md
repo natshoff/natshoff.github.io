@@ -22,6 +22,8 @@ Pawnee National Grassland (NE Colorado) and Thunder Basin National Grassland (NE
 I investigate how this suitability might change across four different climate scenarios representing
 hot/dry, hot/wet, cold/dry, and cold/wet climate futures. 
 
+See the full code workflow [here](https://natshoff.github.io/portfolioPosts/brin2_hsm_hofford.html.html)
+
 #### Smooth brome
 
 <embed type="text/html" src="img/sb.jpg" width="600" height="600">
