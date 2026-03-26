@@ -82,7 +82,7 @@ I chose the following models to try and capture hot/dry, hot/wet, cold/dry, and 
 
 I then calculated growing season precipitation by summing precipitation across Apr-Oct for each year and taking the mean across years for each time period. I calculated mean min winter temperature by taking the mean of Dec-Feb minimum temperatures for each time period. 
 
-<embed type="text/html" src="img/clim_models_plot.html" width="600" height="600">
+<embed type="text/html" src="img/clim_models.html" width="600" height="600">
 ***Figure 3:*** Selected climate models for each site. Note that the historical mean (1971-2000) for each site is shown in a darker color, and the future mean of 20 CMIP5 climate models (2040-2069) is shown in a lighter color for each site. Climate models were selected to represent hot/dry, hot/wet, cold/dry, and cold/wet climate futures.
 
 #### Soils and Topographic Data
